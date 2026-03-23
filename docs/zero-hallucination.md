@@ -142,7 +142,7 @@ If you've only read paragraphs and claim a rule "isn't documented" — you're wr
 
 ## Real Examples of Caught Hallucinations
 
-From 100+ design sessions on a production B2B SaaS project:
+From 100+ real AI-assisted design sessions:
 
 | Session | Hallucination | How Caught |
 |---------|--------------|------------|

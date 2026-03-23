@@ -39,17 +39,17 @@ This is the most important operational advice in the entire methodology.
 ### Session Template
 
 ```
-Session 1: Tokens + Atoms (Block 1)       → commit
-Session 2: Core Molecules (Block 2)        → commit
-Session 3: Complex Molecules (Block 3)     → commit
-Session 4: Organisms (Block 4)             → commit
-Session 5-N: Screen Assembly (1-3 screens per session) → commit each
+Session 1: Tokens — Block 1 (foundation)             → commit
+Session 2: Atoms — Block 2                            → commit
+Session 3: Molecules — Block 3                        → commit
+Session 4: Organisms — Block 4                        → commit
+Session 5-N: Screen Assembly — Phase 6 (1-3 screens)  → commit each
 Session N+1: Polish pass (review + batch fixes)        → commit
 ```
 
 ---
 
-## Step 1: Initialize Tokens
+## Block 1: Initialize Tokens
 
 Create your token layer first. Everything else depends on it.
 
@@ -63,8 +63,9 @@ Create your token layer first. Everything else depends on it.
 
 **File: `tailwind.config.ts`**
 ```ts
-// Extend Tailwind with your tokens
 // Map CSS variables to Tailwind utility classes
+// e.g., colors: { brand: { primary: 'var(--color-brand-primary)' } }
+// This lets you use `text-brand-primary` in JSX
 ```
 
 **File: `src/fonts/` setup**
@@ -77,7 +78,7 @@ Create your token layer first. Everything else depends on it.
 
 ---
 
-## Step 2: Build Atoms
+## Block 2: Build Atoms
 
 Atoms are indivisible elements. Build them ALL before moving to molecules.
 
@@ -116,7 +117,7 @@ Create `/demo/design-system/page.tsx` with a section per atom showing all varian
 
 ---
 
-## Step 3: Build Molecules
+## Block 3: Build Molecules
 
 Molecules combine 2-3 atoms into functional units.
 
@@ -143,7 +144,7 @@ If a needed atom doesn't exist, flag it as [GAP].
 
 ---
 
-## Step 4: Build Organisms
+## Block 4: Build Organisms
 
 Organisms are complex blocks that compose DIFFERENT molecule types.
 
@@ -156,31 +157,31 @@ An organism MUST pass this test:
 ### Typical Organism Set
 | Component | Composed From | Layout Logic |
 |-----------|--------------|-------------|
-| DsSidebar | DsNavItem × N + Logo + Role selector | 3 states: full (240px), compact (88px), collapsed (64px) |
-| DsKpiPanel | DsCard + DsStatusBadge + DsChip | Responsive grid, 2-4 columns |
-| DsDashboardNavPanel | DsNavItem + DsIndicator | Tab-style navigation with active indicator |
+| DsSidebar | DsNavItem × N + Logo + User menu | Collapsible, responsive states |
+| DsDataPanel | DsCard + DsBadge + DsChip | Responsive grid, 2-4 columns |
+| DsTabNavPanel | DsNavItem + DsIndicator | Tab-style navigation with active indicator |
 
 ### AI Prompt Pattern for Organisms
 ```
 Build [DsSidebar] as a design system Organism.
 
 Composed from: DsNavItem (molecule) × N, Logo, DsBadge (atom)
-States: full (240px), compact (88px), collapsed (64px)
-Active indicator: 4px left bar + background tint (full), pill (compact), icon tint (collapsed)
-Role-based: different nav items per role (Employee, Manager, HR, Executive)
+States: expanded (240px), compact (88px), collapsed (64px)
+Active indicator: 4px left bar + background tint (expanded), pill (compact), icon tint (collapsed)
+Role-based: different nav items per user role (from PRD role definitions)
 
 Layout logic: Collapsible via toggle button. Transitions between states.
 State management: activeScreen prop, collapsed prop.
 
 This is a REAL organism because:
-- Composes NavItems + Logo + RoleSelector (different molecules)
+- Composes NavItems + Logo + UserMenu (different molecules)
 - Adds collapse/expand state management
 - Has responsive layout logic (not just a list)
 ```
 
 ---
 
-## Step 5: Showcase-Driven Validation
+## Showcase-Driven Validation
 
 After each Block, verify on the showcase page:
 

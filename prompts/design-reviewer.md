@@ -71,7 +71,7 @@ When summarizing a review session, create a transformation table:
 |---------|-----|--------|--------|
 | Page header | Empty | `text-headline` + illustration | Visual hierarchy established |
 | Card padding | Arbitrary 16px | DS standard `px-5 py-5` | Consistent with DS |
-| Score display | Plain number | `DsStatusBadge` with color band | Matches UIDD spec |
+| Status display | Plain text | `DsBadge` with color variant | Matches UIDD spec |
 
 Now review the screens provided and apply this methodology.
 ```

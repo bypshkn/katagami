@@ -20,7 +20,7 @@
 | Framework | [e.g., Next.js 14, App Router] |
 | Styling | [e.g., Tailwind CSS v4] |
 | Language | [e.g., TypeScript strict] |
-| Fonts | [e.g., Roobert (headings), Archivo (body)] |
+| Fonts | [e.g., Inter (headings), System UI (body)] |
 | Icons | [e.g., Lucide React] |
 | Package Manager | [e.g., pnpm] |
 | Build Tool | [e.g., Turbopack] |
@@ -72,7 +72,7 @@ Shadow: 0 4px 20px rgba(0,0,0,0.03)
 | # | Component | Level | Exists? | Action |
 |---|-----------|-------|---------|--------|
 | 1 | DsButton | Atom | ✅ Yes | No changes |
-| 2 | DsStatusBadge | Molecule | ❌ No | Build new |
+| 2 | [DsComponentName] | Molecule | ❌ No | Build new |
 | 3 | DsSidebar | Organism | ✅ Yes | Extend variants |
 
 ---
@@ -82,9 +82,9 @@ Shadow: 0 4px 20px rgba(0,0,0,0.03)
 > Define the sequence. AI should follow this exactly.
 
 ```
-Block 1: Foundation (if new DS)
-  └─ Tokens in globals.css
-  └─ Tailwind config extensions
+Block 1: Tokens (Foundation)
+  └─ CSS variables in globals.css
+  └─ Tailwind config extensions (map vars to utility classes)
   └─ Font loading setup
 
 Block 2: Atoms [~X components]
@@ -105,7 +105,7 @@ Block 4: Organisms [~X components]
   └─ DsPageHeader (atom: Typography + molecule: Breadcrumbs)
   └─ → Build showcase section for Organisms
 
-Block 5: Screen Assembly
+Phase 6: Screen Assembly
   └─ [Screen 1 name] — compose from Blocks 2-4
   └─ [Screen 2 name]
   └─ → Verify against PRD acceptance criteria

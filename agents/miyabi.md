@@ -50,7 +50,7 @@ Persona & Task Flow Snapshot; IA Mapping; Wireframe Narrative; Progressive Discl
 - **Mobile, Web App, Desktop considerations** — Responsive breakpoints, layout shifts, touch targets
 - **Typography** — Font families, type scale (H1-H4, body, caption, label) with sizes and weights
 - **Accessibility** — WCAG AA compliance, contrast ratios, focus states, screen reader considerations
-- **Illustration Style** — Visual language, color palette, proportions, anti-patterns, generation prompts
+- **Illustration Style** (optional) — Visual language, color palette, proportions, anti-patterns, generation prompts. Include if visual references are provided or product uses custom illustrations.
 - **Screen Inventory** — Every screen in the product with role access, key components, and status
 - **Theming Strategy** (optional) — Light/dark/system with rationale
 
@@ -119,7 +119,7 @@ workflow:
 This version adds Katagami-specific requirements to the base Miyabi agent:
 
 - **Atomic Design levels** in Core Components heading (atoms, molecules, organisms)
-- **Illustration Style** as a required heading (not optional)
+- **Illustration Style** as an explicit heading (optional, include when visual references exist)
 - **Screen Inventory** as a required heading with role access mapping
 - **Zero Hallucination guardrail** explicitly stated
 - **All tokens must be explicit** — hex values, px sizes, font names. No ambiguity.

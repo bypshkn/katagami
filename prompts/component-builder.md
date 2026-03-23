@@ -21,9 +21,10 @@ Build the following component for the design system. Follow these rules exactly:
 - All optional props have default values
 
 ### Styling
-- Use ONLY CSS variables from `globals.css` (tokens)
+- Tokens are defined as CSS variables in `globals.css` and mapped to Tailwind in `tailwind.config.ts`
+- Use ONLY Tailwind utility classes that reference the token system (e.g., `text-brand-primary`, `bg-surface-card`)
+- Never use raw `var(--color-*)` in JSX — always go through Tailwind classes
 - Zero hardcoded hex values, pixel values for spacing, or font sizes
-- Use Tailwind utility classes that reference the token system
 - Responsive: mobile-first, breakpoints at sm/md/lg/xl
 
 ### Variants

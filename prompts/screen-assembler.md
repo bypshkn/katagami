@@ -22,14 +22,14 @@ You are assembling a production screen using ONLY existing Design System compone
 - Mark any invented data as [DEMO DATA]
 
 ### 3. LAYOUT COMPOSITION
-Screen structure should follow:
+Screen structure should follow this pattern:
 ```
-<DsPageContainer>
+<div className="min-h-screen p-6 space-y-6">
   <DsPageHeader title="..." breadcrumbs={[...]} />
 
   <main className="space-y-6">
-    {/* KPI row (if applicable) */}
-    <DsKpiPanel items={[...]} />
+    {/* Summary row (if applicable) */}
+    {/* Use DS organisms for data panels, KPIs, etc. */}
 
     {/* Primary content */}
     <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -38,7 +38,7 @@ Screen structure should follow:
 
     {/* Secondary content / tables / lists */}
   </main>
-</DsPageContainer>
+</div>
 ```
 
 ### 4. RESPONSIVE STRATEGY
@@ -75,7 +75,7 @@ At the top of the page file, add a comment:
 /**
  * Screen: {Screen Name}
  * Spec: PRD §{section}, Task {T.X.X}
- * DS Components used: DsPageHeader, DsKpiPanel, DsStatusBadge, ...
+ * DS Components used: DsPageHeader, DsCard, DsBadge, ...
  * Status: {Draft | Review | Production}
  */
 ```

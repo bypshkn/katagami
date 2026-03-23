@@ -80,17 +80,17 @@ If you're working in a VM where the mounted filesystem doesn't support `unlink` 
 ```bash
 # 1. Create worktree on local (non-mounted) disk
 cd /tmp
-git clone --branch concept/design-system /mnt/project tw-worktree
-cd tw-worktree
+git clone --branch concept/design-system /mnt/project ds-worktree
+cd ds-worktree
 
 # 2. Make changes here (local disk = full POSIX support)
 # Edit, add, commit, push — all works normally
 
 # 3. After commit, sync back to mount
-rsync -av --exclude='.git' /tmp/tw-worktree/ /mnt/project/
+rsync -av --exclude='.git' /tmp/ds-worktree/ /mnt/project/
 
 # 4. Clean up
-rm -rf /tmp/tw-worktree
+rm -rf /tmp/ds-worktree
 ```
 
 ### Alternative: Move Lock Files
@@ -153,4 +153,4 @@ SVGs are text files, so diffs are readable. Large batches (50+ files) may have l
 | Branch behind remote | `git pull --rebase origin concept/design-system` |
 | Accidental commit to wrong branch | `git cherry-pick <hash>` to correct branch, then `git reset HEAD~1` on wrong one |
 | Untracked files after branch switch | Ignore — git doesn't track them, they're virtiofs artifacts |
-| Remote not found | Verify PAT token: `https://username:TOKEN@github.com/org/repo.git` |
+| Remote not found | Authenticate via `gh auth login` or verify remote URL with `git remote -v` |

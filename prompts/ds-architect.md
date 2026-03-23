@@ -34,12 +34,11 @@ Layout wireframes that define grid structure and placement of organisms. No real
 Final screens with real data that validate the design system works end-to-end.
 
 ## Build Order
-1. Define tokens first (CSS variables: colors, spacing, typography, radius, shadows)
-2. Build Atoms (all base elements with all variants)
-3. Build Molecules (compose atoms into functional units)
-4. Build Organisms (compose molecules into complex blocks)
-5. Create showcase page after each block to verify visually
-6. Only then assemble full pages
+1. Block 1: Define tokens (CSS variables: colors, spacing, typography, radius, shadows)
+2. Block 2: Build Atoms (all base elements with all variants) + showcase
+3. Block 3: Build Molecules (compose atoms into functional units) + showcase
+4. Block 4: Build Organisms (compose molecules into complex blocks) + showcase
+5. Phase 6: Assemble full pages from DS components
 
 ## Quality Gates (MANDATORY before any component is "done")
 - [ ] TypeScript strict mode — zero errors on `npm run build`
@@ -74,7 +73,7 @@ src/
 │   │   └── ...
 │   ├── organisms/
 │   │   ├── DsSidebar.tsx
-│   │   ├── DsKpiPanel.tsx
+│   │   ├── DsDataPanel.tsx
 │   │   └── ...
 │   └── index.ts             ← Barrel export
 ├── app/demo/
@@ -89,6 +88,14 @@ src/
 - One component per file (with sub-components allowed if tightly coupled)
 - Props interface named `{ComponentName}Props`
 
+## Styling Strategy
+Tokens are defined as CSS variables and consumed via Tailwind utility classes:
+1. Define in `globals.css` → `:root { --color-brand-primary: #HEX; }`
+2. Map in `tailwind.config.ts` → `colors: { brand: { primary: 'var(--color-brand-primary)' } }`
+3. Use in JSX → `className="text-brand-primary bg-surface-card"`
+
+Never use raw `var(--color-*)` in component JSX. Never hardcode hex values. Always go through Tailwind.
+
 ## Token Format (globals.css)
 ```css
 :root {
@@ -99,14 +106,17 @@ src/
   --color-text-high-contrast: #HEXVALUE;
   --color-text-muted: #HEXVALUE;
 
-  /* Status/Score bands */
-  --color-status-thriving: #HEXVALUE;
-  --color-status-risk: #HEXVALUE;
+  /* Status */
+  --color-status-success: #HEXVALUE;
+  --color-status-warning: #HEXVALUE;
+  --color-status-danger: #HEXVALUE;
+  --color-status-info: #HEXVALUE;
 
   /* Geometry */
-  --radius-box: 12px;
-  --radius-btn: 8px;
-  --radius-chip: 999px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
   --shadow-card: 0 4px 20px rgba(0,0,0,0.03);
 
   /* Spacing (if not using Tailwind) */

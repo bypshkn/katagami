@@ -46,15 +46,13 @@
 | `--color-status-danger` | #______ | Error states, critical alerts |
 | `--color-status-info` | #______ | Informational states |
 
-### Score Band Colors (if applicable)
-| Band | Hex | Range |
-|------|-----|-------|
-| Thriving | #______ | 80-100 |
-| Strong | #______ | 60-79 |
-| Developing | #______ | 40-59 |
-| At Risk | #______ | 20-39 |
-| Critical | #______ | 0-19 |
-| N/A | #______ | Insufficient data |
+### Extended Palette (if applicable)
+| Token Name | Hex | Usage |
+|-----------|-----|-------|
+| `--color-accent-1` | #______ | [Describe usage — e.g., score bands, categories, tags] |
+| `--color-accent-2` | #______ | [Describe usage] |
+| `--color-accent-3` | #______ | [Describe usage] |
+| `--color-accent-4` | #______ | [Describe usage] |
 
 ---
 
@@ -144,9 +142,9 @@ List every unique screen in your product:
 
 | # | Screen Name | Role Access | Key Components | Status |
 |---|-------------|------------|----------------|--------|
-| S1 | Login | All | Form, Logo, Illustration | To build |
-| S2 | Dashboard — Employee | Employee | KPI panel, Status badges, Activity feed | To build |
-| S3 | Dashboard — Manager | Manager | Team selector, KPI panel, Data grid | To build |
+| S1 | [Screen name] | [Roles] | [Key DS components used] | To build |
+| S2 | [Screen name] | [Roles] | [Key DS components used] | To build |
+| S3 | [Screen name] | [Roles] | [Key DS components used] | To build |
 | S4 | ... | ... | ... | ... |
 
 ---

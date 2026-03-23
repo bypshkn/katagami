@@ -15,7 +15,7 @@
 
 **Recommended tool:** Recraft V3 produces the cleanest vector-ready output. Midjourney is better for mood/concept exploration but often needs post-processing.
 
-**Recommended workflow:** Use **Antigravity** (Claude Projects) or a similar long-context AI for design concept exploration and illustration generation. It holds visual direction better across a session than coding-focused tools.
+**Recommended workflow:** Use **Antigravity** (Google AI IDE) or Claude Projects for design concept exploration and illustration generation. Long-context conversational AI holds visual direction better across a session than coding-focused tools.
 
 ---
 
@@ -79,6 +79,10 @@ Add style-specific negatives:
 - If you want minimal: "detailed faces, complex scenes, many characters"
 
 --ar [YOUR ASPECT RATIO] --iw 0.25
+
+Note: --ar and --iw are Midjourney-specific parameters.
+For Recraft V3, set aspect ratio and style strength in the UI directly.
+For other tools, adapt these settings to the tool's native controls.
 ```
 
 ---
