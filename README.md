@@ -104,6 +104,8 @@ You do everything — specs, design decisions, and code. The full pipeline, opti
 
 **That's it.** The magic is in the quality of documents (steps 1-4) and the prompts (steps 5-6). This repo gives you both.
 
+> **Just want to build?** → [Quickstart — 7 steps from idea to screens](docs/quickstart.md)
+>
 > Want the deep dive? Read the [full methodology](docs/methodology.md).
 
 ---
@@ -125,6 +127,7 @@ katagami/
 ├── README.md                        ← You are here
 │
 ├── docs/
+│   ├── quickstart.md               ← 7 steps, no philosophy, just do it
 │   ├── getting-started-pm.md       ← PM onboarding path
 │   ├── getting-started-dev.md      ← Developer onboarding path
 │   ├── getting-started-solo.md     ← Solo founder onboarding path
